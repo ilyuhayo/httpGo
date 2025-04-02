@@ -1,0 +1,13 @@
+services: # Описание сервисов
+  postgres: # Сервис 'postgres'
+    container_name: postgres-go # Контейнер 'postgres-go'
+    image: postgres:16.4 # Образ c версией 'postgres:16.4'
+    environment: # Переменные окружения
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: my_pass
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres-data:/data/postgres
+    ports:
+      - "5432:5432"
+         
